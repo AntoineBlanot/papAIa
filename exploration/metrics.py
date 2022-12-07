@@ -20,6 +20,7 @@ def topk(vector: pd.DataFrame, data: pd.DataFrame, k: int = 5) -> pd.DataFrame:
 
     scores = sim_scores - np.array([len(m) * 0.1 for m in missing_list])
     res = pd.DataFrame(dict(name=meals, sim_score=sim_scores, score=scores, missing_id=missing_list))
+    # res = pd.DataFrame(dict(name=meals, sim_score=sim_scores, missing_id=missing_list))
     res = res.sort_values(by="score", ascending=False).reset_index(drop=True)
 
     return res

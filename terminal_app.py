@@ -25,11 +25,11 @@ def ask():
         else:
             new_ingredients.append(i)
     
-    AVAILABLE_INGREDIENTS.extend(new_ingredients)
-    AVAILABLE_INGREDIENTS = list(set(AVAILABLE_INGREDIENTS))
-    print("You currently have {} ingredients:\n{}".format(len(AVAILABLE_INGREDIENTS), AVAILABLE_INGREDIENTS))
+    # AVAILABLE_INGREDIENTS.extend(new_ingredients)
+    # AVAILABLE_INGREDIENTS = list(set(AVAILABLE_INGREDIENTS))
+    print("You currently have {} ingredients:\n{}".format(len(new_ingredients), new_ingredients))
     
-    return AVAILABLE_INGREDIENTS
+    return new_ingredients
 
 def missing_names(missing_list: list, mapping: pd.DataFrame):
     names = [
