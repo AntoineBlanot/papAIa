@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Result for recommendation</title>
+    </head>
+    <body>
+        <h4>Recommendation system outputs</h4>
+        {% for table in tables %}
+                    {{ titles[loop.index] }}
+                    {{ table|safe }}
+        {% endfor %}
+        <div class="form-group">
+            <label for="i">Meal index: </label>
+            <input type="number" name="i"
+                   placeholder="ex: 1" class="form-control" size="1"
+                   value="{{ request.form['i'] }}"></input>
+        </div>
+        <h5>Your shooping cart</h5>
+        {% for item in cart %}
+            <p>{{ item }}</p>
+        {% endfor %}
+        <!--Submit button-->
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Select meal</button>
+        </div>
+        <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="{{ url_for('ingredients') }}">Return</a></div>
+    </body>
+</html>

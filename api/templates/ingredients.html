@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ingredients</title>
+    </head>
+    <body>
+        <form method="post">
+            <!--Formulaire for collecting the user input data-->
+            <h4>Recommendation system inputs</h4>
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="k">k:</label>
+                    <input type="number" name="k"
+                           placeholder="ex: 5" class="form-control" size="5"
+                           value="{{ request.form['k'] }}"></input>
+                </div>
+                <div class="form-group">
+                    <label for="ingredient[]">Ingredients:</label>
+                    <input type="text" name="ingredient[]"
+                           placeholder="ex: tomato, chicken, oil" class="form-control" size="30"
+                           value="{{ request.form['ingredient[]'] }}"></input>
+            </div>
+            <!--Submit button-->
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Predict</button>
+            </div>
+        </form>
+    </body>
+</html>
